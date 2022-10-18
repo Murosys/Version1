@@ -1,0 +1,55 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+     background-color:gold;}
+
+a
+{
+	text-decoration:none;
+	color:#FFF;
+}
+ul {
+  font-family: 'Lucida Grande', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  text-align: left;
+  display: inline;
+  margin:0px;
+  padding:0px;
+  list-style: none;
+}
+ul li {
+  color:#fff;
+  font: bold 12px/18px sans-serif;
+  display: inline-block;
+  margin-right: -4px;
+  position: relative;
+  padding: 15px 50px;
+  
+  cursor: pointer;
+	background-color: rgba(1, 1, 1, 0.6);
+
+	
+}
+ul li:hover {
+  background: #c22e00;
+  color: #fff;
+}
+ul li ul {
+  padding: 0;
+  position: absolute;
+  top: 48px;
+  left: 0;
+  width: 200px;
+  visibility: hidden;
+  text-align:left;
+}
+ul li ul li { 
+  background: #000;
+  display: block; 
+  color: #fff;
+  text-align:left;
+}
+ul li ul li:hover { background: #c22e00; }
+ul li:hover ul {
+  display: block;
+  visibility: visible;
+}

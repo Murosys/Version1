@@ -1,0 +1,96 @@
+@charset "UTF-8";
+/* CSS Document */
+body{
+	background-image: url("pranay2.png");
+}
+
+a
+{
+	text-decoration: none;
+	color: white;
+	align: center;
+	margin: 60px;
+	padding: 15px;
+}
+ul {
+  font-family: 'Lucida Grande', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  text-align: center;
+  display: inline;
+background: rgba(0,0,0,0.57);
+  margin:0px;
+  padding:20px;
+  list-style: none;
+	
+}
+ul li {
+  color: black;
+  font: bold 18px/27px Times New Roman;
+  display: inline-table;
+  margin-right: 20px;
+  position: relative;
+  padding: 8px 20px;
+	font-size: 28px;
+  
+  cursor: pointer;
+	background-color:rgba(0,0,3,0.72);
+
+	
+}
+
+ul li:hover {
+  background: rgba(2,2,50,50);
+  color: #fff;
+}
+
+ul li ul {
+  padding: 0;
+  position: absolute;
+  top:50px;
+  left: 0;
+  width: 200px;
+  visibility: hidden;
+  text-align:left;
+}
+
+header{
+	text-align: center;
+	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+	font-size: 90px;
+	padding: 20px;
+	
+	color: white;
+	
+}
+h2{
+	text-align: center;
+font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+font-size: 50px;
+	color: white;
+	padding: 30px;
+	background: rgba(0,0,0,0.57);
+	
+}
+h4{
+	text-align: left;
+	
+	color: white;
+	font-size: 30px;
+	padding: 25px;
+	margin: 20px;
+}
+p{
+	text-align: left;
+	
+	color: white;
+	font-size: 15px;
+}
+section{text-align: justify;
+	background: rgba(0,0,0,0.57);
+	color: white;
+	font-size: 15px;}
+
+form{
+	font-size: 35px;
+	padding-left: 00px;
+	text-align: center
+}
