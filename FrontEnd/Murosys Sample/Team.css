@@ -9,8 +9,8 @@ a
 	text-decoration: none;
 	color: white;
 	align: center;
-	margin: 60px;
-	padding: 15px;
+	margin: 0px;
+	padding: 5px;
 }
 ul {
   font-family: 'Lucida Grande', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -18,7 +18,7 @@ ul {
   display: inline;
 background: rgba(0,0,0,0.57);
   margin:0px;
-  padding:20px;
+  padding:10px;
   list-style: none;
 	
 }
