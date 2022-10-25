@@ -13,7 +13,7 @@ app.config['MYSQL_DB'] = 'murosys_database'
 
 mysql = MySQL(app)
 
-@app.route('/murosyslogin/', methods = ['GET', 'POST'])
+@app.route('/', methods = ['GET', 'POST'])
 def login():
     msg = ''
     if request.method == 'POST' and 'username' in request.form and 'password' in request.form:
@@ -33,14 +33,14 @@ def login():
 
     return render_template('index.html', msg=msg)
 
-@app.route('/murosyslogin/logout')
+@app.route('/logout')
 def logout():
     session.pop('loggedin', None)
     session.pop('id', None)
     session.pop('username', None)
     return redirect(url_for('login'))
 
-@app.route('/murosyslogin/register', methods = ['GET', 'POST'])
+@app.route('/register', methods = ['GET', 'POST'])
 def register():
     msg = ''
     if request.method == 'POST' and 'username' in request.form and 'password' in request.form and 'email' in request.form:
@@ -69,14 +69,14 @@ def register():
     
     return render_template('register.html', msg=msg)
 
-@app.route('/murosyslogin/home')
+@app.route('/home')
 def home():
     if 'loggedin' in session:
         return render_template('home.html', username=session['username'])
 
     return redirect(url_for('login'))
 
-@app.route('/murosyslogin/profile')
+@app.route('/profile')
 def profile():
     if 'loggedin' in session:
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)

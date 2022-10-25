@@ -6,12 +6,12 @@
     -moz-osx-font-smoothing: grayscale;
 }
 body {
-    background-color: #435165;
+    background-image: url("pranay2.png");
     margin: 0;
 }
 .login, .register {
     width: 400px;
-    background-color: #ffffff;
+    background-image: url("pranay2.png");
     box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
     margin: 100px auto;
 }

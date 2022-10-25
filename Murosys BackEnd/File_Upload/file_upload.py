@@ -10,7 +10,7 @@ app = Flask(__name__)
 
 app.config["DEBUG"] = True
 
-UPLOAD_FOLDER = 'static/files'
+UPLOAD_FOLDER = 'files'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 app.config['MYSQL_HOST'] = 'localhost'
@@ -23,7 +23,7 @@ mysql = MySQL(app)
 
 @app.route("/")
 def index():
-    return render_template('index.html')
+    return render_template('indianajones.html')
 
 @app.route("/", methods = ['POST'])
 def uploadFiles():

@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='indianajones.css') }}">
+    <title>Murosys - File Upload</title>
+    <header>Murosys</header>
+  </head>
+  <body>
+    <h1>Select and upload your music history file</h1>
+    <form method="POST" action="" enctype="multipart/form-data">
+      <p><input type="file" name="file"></p>
+      <p><input type="submit" name="file" value="Get Recommendations"></p>
+    </form>
+  </body>
+</html>
