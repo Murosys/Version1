@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+body{
+    background-image: url("pranay2.png");
+}
+
+h1{
+    width: 1000px;
+    margin: 0 auto;
+    padding: 25px 0;
+    font-size: 25px;
+    border-bottom: 5px solid #e0e0e3;
+    color: #adb3c2;
+}
+
+form{
+    font-size: 30px;
+    text-align: center;
+    color: white;
+}
+
+
+
