@@ -1,0 +1,4 @@
+mysql-connector
+Flask
+pandas
+scikit-learn
