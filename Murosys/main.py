@@ -5,11 +5,12 @@ import os
 from sklearn.ensemble import RandomForestClassifier
 import mysql.connector
 
-
 app = Flask(__name__)
 app.secret_key = 'NateTheGreat'
 
-connection = mysql.connector.connect(user="root", password="PQ9S4HLj4N\"zE}?J", host="10.17.48.4", database="MurosysDB")
+#connection = mysql.connector.connect(user="root", password="PQ9S4HLj4N\"zE}?J", host="10.17.48.4", database="MurosysDB")
+connection = mysql.connector.connect(user="root", password="PQ9S4HLj4N\"zE}?J", host="34.67.157.2", database="MurosysDB")
+
 
 UPLOAD_FOLDER = 'files'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
@@ -107,17 +108,12 @@ def profile():
 def uploadFiles():
     uploaded_file = request.files['file']
     if uploaded_file.filename != '':
-        file_path = os.path.join(app.config['UPLOAD_FOLDER'], uploaded_file.filename)
-        uploaded_file.save(file_path)
-        parseCSV(file_path)
-        recommendations()
-
-        
-
+        #parseCSV(uploaded_file)
+        recommendations(request.form.getlist('features'))
     return redirect(url_for('home'))
 
-def parseCSV(filepath):
-    data = pd.read_csv(filepath)
+def parseCSV(file):
+    data = pd.read_csv(file)
     columns = list(data.columns)
 
     for i,row in data.iterrows():
@@ -126,7 +122,7 @@ def parseCSV(filepath):
         cursor.execute("INSERT INTO listening_history (endTime, artistName, trackName, msPlayed, user_id) VALUES (%s, %s, %s, %s, %s)", values)
         connection.commit()
 
-def recommendations():
+def recommendations(features):
     cursor = connection.cursor()
     cursor.execute("select * from songs")
     music = pd.DataFrame(cursor.fetchall())
@@ -147,7 +143,8 @@ def recommendations():
     merged.loc[merged['msPlayed'] > 30000, 'Likes_Song'] = 1
 
     # Selecting subset of features
-    filters = list(merged.columns[12:22])
+    #filters = list(merged.columns[12:22])
+    filters = features
     train = merged[filters + ["Likes_Song"]]
     name = music['name']
     artist = music['artists'].str.strip('[]').str.split(',').str[0].str.strip('\'\'')
@@ -172,7 +169,8 @@ def recommendations():
         connection.commit()
 
 
-
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=os.environ.get('PORT',8080))
 
 
 

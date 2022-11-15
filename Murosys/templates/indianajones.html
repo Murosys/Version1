@@ -3,10 +3,77 @@
 {% block title %}Murosys - File Upload{% endblock %}
 
 {% block content %}
+
 <h2>Follow Instructions to generate song recommendations!</h2>
     <form method="POST" action="" enctype="multipart/form-data">
       <p>Upload your music history CSV file here:    <input type="file" name="file"></p>
       <p>Click this to generate your recommendations!    <input type="submit" name="file" value="Get Recommendations"></p>
+      <div class="card" style="margin:50px 0">
+        <div class="card-header"><b>Choose Music Features</b></div>
+    
+        <ul class="list-group list-group-flush">
+        <li class="list-group-item">danceability
+        <label class="switch ">
+        <input type="checkbox" value="danceability" name="features" class="danger">
+        <span class="slider round"></span>
+        </label>
+        </li>
+        <li class="list-group-item">energy
+        <label class="switch ">
+        <input type="checkbox" value=energy name="features" class="danger">
+        <span class="slider round"></span>
+        </label>
+        </li>
+        <li class="list-group-item">key
+        <label class="switch ">
+        <input type="checkbox" value=key name="features" class="danger">
+        <span class="slider round"></span>
+        </label>
+        </li>
+        <li class="list-group-item">loudness
+          <label class="switch ">
+          <input type="checkbox" value=loudness name="features" class="danger">
+          <span class="slider round"></span>
+          </label>
+        </li>
+        <li class="list-group-item">mode
+          <label class="switch ">
+          <input type="checkbox" value=mode name="features" class="danger">
+          <span class="slider round"></span>
+          </label>
+        </li>
+        <li class="list-group-item">speechiness
+          <label class="switch ">
+          <input type="checkbox" value=speechiness name="features" class="danger">
+          <span class="slider round"></span>
+          </label>
+        </li>
+        <li class="list-group-item">acousticness
+          <label class="switch ">
+          <input type="checkbox" value=acousticness name="features" class="danger">
+          <span class="slider round"></span>
+          </label>
+        </li>
+        <li class="list-group-item">instrumentalness
+          <label class="switch ">
+          <input type="checkbox" value=instrumentalness name="features" class="danger">
+          <span class="slider round"></span>
+          </label>
+        </li>
+        <li class="list-group-item">liveliness
+          <label class="switch ">
+          <input type="checkbox" value=liveliness name="features" class="danger">
+          <span class="slider round"></span>
+          </label>
+        </li>
+        <li class="list-group-item">valence
+          <label class="switch ">
+          <input type="checkbox" value=valence name="features" class="danger">
+          <span class="slider round"></span>
+          </label>
+        </li>
+        </ul>
+    </div>
     </form>
 <div>
     <h3>Instructions on how to get your music history data from your Spotify account:</h3>
