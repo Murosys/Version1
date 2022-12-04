@@ -1,0 +1,5 @@
+mysql-connector
+Flask
+pandas
+scikit-learn
+google.cloud
